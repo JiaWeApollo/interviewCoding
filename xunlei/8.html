@@ -1,0 +1,43 @@
+<!--
+8、请使用闭包的方式，写一段 JS 程序实现如下功能：函数每调用一次则该函数的返回值加 1。
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="test()">add</button>
+	</body>
+		<script type="text/javascript">
+			function add(){
+				var i=0;
+				function increase(){
+					i++;
+					return i;
+				}
+				return increase;
+			}
+			var f1 =add();
+			function test(){
+	          console.log(f1());				
+			}		
+	/* 别的实现
+	 function A() {
+	    var count = 0;
+	    function B() {
+	        count++;
+	        return count;
+	    }
+	    return B;
+	}
+	
+	var plus = A();
+	//A中的count会一直停留在内存中。。。
+	plus();// 0
+	plus(); // 1
+	plus(); // 2
+	*/
+		</script>	
+</html>

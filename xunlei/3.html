@@ -1,0 +1,65 @@
+<!--3、一个数组 par 中存放有多个人员的信息，每个人员的信息由年龄 age 和姓名 name 组成，如{age: 2, name: 'xx'}。请写一段 JS 程序，对这个数组按年龄从小到大进行排序。-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var par =[
+		  {
+		  	'name':'zhengbo',
+		  	'age':30
+		  },	
+		  {
+		  	'name':'jiamiao',
+		  	'age':16
+		  },	
+		  {
+		  	'name':'changjiang',
+		  	'age':38
+		  },	
+		  {
+		  	'name':'xiangchuan',
+		  	'age':27
+		  },		
+		  {
+		  	'name':'jiawei',
+		  	'age':25
+		  },
+		  {
+		  	'name':'zhubin',
+		  	'age':29
+		  },
+		  {
+		  	'name':'haijun',
+		  	'age':23
+		  }
+		]
+		//	我的方法
+            function rank(obj){
+            	var i,j;
+            	var length =obj.length;
+            	for(i=0;i<length-1;i++){
+            		for(j=0;j<length-1-i;j++){
+            			if(parseInt(obj[j].age)>parseInt(obj[j+1].age)){
+            				var temp =obj[j];
+            				obj[j]=obj[j+1];
+            				obj[j+1]=temp;
+            			}
+            		}
+            	}
+            	return par;
+            }
+            console.log(rank(par));  //以上为冒泡排序
+//     别的方法 ,用的 array.sort
+	function parSort(par) {
+	    return par.sort(function(arr1, arr2) {
+	        return arr1.age > arr2.age ? 1 : -1;
+	    });
+	}
+	console.log(parSort(par));
+	</script>
+</html>

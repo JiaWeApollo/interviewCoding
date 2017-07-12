@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		var obj1 ={
+			"i":"obj1",
+			"fn":function(){
+				document.write(this.i);
+			}
+		};
+		var obj2 ={"i":"obj2"};
+		var obj3 ={"i":"obj3"};
+		obj1.fn();
+		var newFn =obj1.fn;
+		newFn();
+		newFn.call(obj2);
+		obj3.fn =newFn;
+		obj3.fn();
+	</script>
+</html>
