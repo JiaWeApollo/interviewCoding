@@ -1,0 +1,34 @@
+<!--1
+14.有这样一个URL:http:vip.qq.com/a.php?a=1&b=2&c=&d=xxx&e，请写一段JS程序提取
+URl中各个GET参数（参数名和参数个数不确定），将其按key-value形式返回到一个json结构中，
+如{a:'1',b:'2',c:'',d:'xxx',e:undefined}。
+-->
+<!--<!DOCTYPE html>-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+</body>
+<script type="text/javascript">
+//    方法一，截取字符串
+    function  getParms(url) {
+        var parms =url.split("?")[1].split("&");
+        var length =parms.length;
+        var keyValue={};
+        for(var i=0;i<length;i++){
+            if(parms[i].indexOf("=")>0){
+                var a =parms[i].split("=");
+                keyValue[a[0]]=a[1];
+            }else{
+                keyValue[parms[i]]=undefined;
+            }
+        }
+        return keyValue;
+    }
+    var keyValue = getParms("URL:http:vip.qq.com/a.php?a=1&b=2&c=&d=xxx&e");
+    console.log(keyValue);
+</script>
+</html>
