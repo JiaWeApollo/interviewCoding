@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>水平垂直居中</title>
+</head>
+<body>
+<div class="container">
+<div class="box"></div>
+</div>
+</body>
+</html>
+<style>
+/* 	 方法一 transform
+.container{
+		width: 800px;
+		height: 800px;
+		background-color: beige;
+		margin: 0 auto;
+		position: relative;
+	}
+			.box{
+				height: 200px;
+				width: 200px;
+				background: red;
+				left: 50%;
+				top: 50%;
+				position: absolute;
+				transform:translate(-50%,-50%)
+		} 
+	*/
+	/*  method two: absolute 
+		.container{
+		width: 800px;
+		height: 800px;
+		background-color: beige;
+		margin: 0 auto;
+		position:relative;
+	}
+			.box{
+				height: 200px;
+				width: 200px;
+				background: red;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				position: absolute;
+				margin: auto;
+		} 
+	*/
+/* 
+	.container{
+		width: 800px;
+		height: 800px;
+		background-color: beige;
+		display: flex;
+		justify-content:center;
+		align-items:center;
+	}
+			.box{
+				height: 200px;
+				width: 200px;
+				background: red;
+		} 
+*/
+/* 
+table-cell & inline-block
+
+ */
+	.container{
+		width: 800px;
+		height: 800px;
+		background-color: beige;
+		display: table-cell;
+		text-align: center;
+		vertical-align:middle;
+	}
+			.box{
+				display: inline-block;
+				height: 200px;
+				width: 200px;
+				background: red;
+		} 
+
+</style>
